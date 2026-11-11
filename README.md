@@ -1,16 +1,38 @@
-# React + Vite
+# 🏥 Smart Healthcare Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A web-based Smart Healthcare Platform designed to simplify healthcare management by bringing essential healthcare services together in one place.
 
-Currently, two official plugins are available:
+## 📌 About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The Smart Healthcare Platform aims to provide patients with an easy-to-use interface for managing their healthcare needs, accessing medical services, and keeping track of their health information.
 
-## React Compiler
+This project is currently under development.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
 
-## Expanding the Oxlint configuration
+- **User Authentication:** Secure patient registration and login.
+- **Doctor Search:** Search and explore doctors and healthcare specialists.
+- **Appointment Management:** Book, reschedule, and cancel appointments.
+- **Medical Records:** Upload and access medical reports and prescriptions.
+- **Medicine Tracker:** Track medicines, dosage, frequency, and reminders.
+- **Emergency Services:** Find nearby hospitals and emergency services.
+- **AI-powered Health Insights:** Get basic, non-diagnostic health insights.
+- **Prescription Extraction:** Extract relevant information from prescriptions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🛠️ Technologies Used
+
+- React.js
+- Vite
+- JavaScript
+- HTML
+- CSS
+
+Additional technologies will be added as development progresses.
+
+## 🚧 Project Status
+
+Currently under development. Features and functionality are being implemented incrementally.
+
+## 👩‍💻 Developer
+
+**Akansha Sharma**
