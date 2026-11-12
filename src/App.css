@@ -412,7 +412,7 @@ footer p {
 .sidebar {
   width: 260px;
   min-height: 100vh;
-  background: linear-gradient(180deg, #193968, #10294f);
+  background: linear-gradient(180deg, #176b60, #104b45);
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
@@ -447,14 +447,14 @@ footer p {
 }
 
 .sidebar nav a:hover {
-  background: #315b96;
+  background: #258f80;
   color: white;
 }
 
 /* Highlight the currently selected navigation page */
 
 .sidebar nav a.active {
-  background: #315b96;
+  background: #258f80;
   color: white;
   font-weight: 600;
 }
@@ -507,7 +507,7 @@ footer p {
 }
 
 .dashboard-card h3 {
-  color: #1976d2;
+  color: #119e8d;
   font-size: 20px;
   margin-bottom: 12px;
 }
@@ -519,7 +519,7 @@ footer p {
 
 .dashboard-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(25,118,210,0.12);
+  box-shadow: 0 8px 25px rgba(17,158,141,0.12);
 }
 
 .dashboard-topbar {
@@ -541,7 +541,8 @@ footer p {
 }
 
 .dashboard-topbar input:focus {
-  border-color: #1976d2;
+  border-color: #119e8d;
+  box-shadow: 0 0 0 3px rgba(17, 158, 141, 0.1);
 }
 
 .user-profile {
@@ -578,18 +579,18 @@ footer p {
 
 .overview-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(25,118,210,0.10);
+  box-shadow: 0 8px 20px rgba(17,158,141,0.10);
 }
 
 .overview-card > span {
   font-size: 28px;
-  background: #eaf4ff;
+  background: #e4f7f3;
   padding: 12px;
   border-radius: 12px;
 }
 
 .overview-card h2 {
-  color: #1976d2;
+  color: #119e8d;
   font-size: 23px;
   margin-bottom: 5px;
 }
@@ -618,7 +619,7 @@ footer p {
 
 .bottom-card h3 {
   margin-bottom: 15px;
-  color: #1e293b;
+  color: #119e8d;
 }
 
 .bottom-card p {
@@ -627,7 +628,81 @@ footer p {
 }
 
 .bottom-card a {
-  color: #2563eb;
+  color: #119e8d;
   text-decoration: none;
   font-weight: 600;
+}
+
+/* Home Page Navigation Button Styling */
+
+.nav-buttons a,
+.hero-buttons a {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Common Page Header */
+.dashboard-header {
+  margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+  color: #183b45;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  color: #64748b;
+}
+
+/* Common Content Cards */
+.dashboard-main .bottom-card {
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+}
+
+/* Doctor Search Section */
+.doctor-search {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.doctor-search input,
+.doctor-search select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  flex: 1;
+}
+
+/* Form Inputs */
+.bottom-card input {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+/* Buttons */
+.bottom-card button {
+  padding: 11px 22px;
+  background: #119e8d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Links inside Cards */
+.bottom-card a {
+  color: #119e8d;
+  text-decoration: none;
 }

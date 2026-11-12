@@ -1,5 +1,5 @@
 import '../App.css'
-
+import { Link } from 'react-router-dom'
 function App() {
   return (
     <div className="app">
@@ -18,8 +18,8 @@ function App() {
         </div>
 
         <div className="nav-buttons">
-          <button className="login-btn">Login</button>
-          <button className="signup-btn">Get Started</button>
+           <Link to="/login" className="login-btn">Login</Link>
+           <Link to="/signup" className="signup-btn">Get Started</Link>
         </div>
       </nav>
 
@@ -40,8 +40,8 @@ function App() {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Get Started →</button>
-            <button className="secondary-btn">Explore Services</button>
+             <Link to="/signup" className="primary-btn">Get Started →</Link>
+             <a href="#services" className="secondary-btn">Explore Services</a>
           </div>
 
           <div className="hero-stats">
