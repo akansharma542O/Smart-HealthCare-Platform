@@ -1,11 +1,50 @@
 import '../App.css'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+
 function Signup() {
   const navigate = useNavigate()
-  const handleSignup = (e) => {
-  e.preventDefault()
-  navigate('/dashboard')
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    password: ''
+  })
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
+
+  const handleSignup = async (e) => {
+    e.preventDefault()
+
+    try {
+      const response = await fetch('http://localhost:5000/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        alert('Account created successfully!')
+        navigate('/login')
+      } else {
+        alert(data.message)
+      }
+
+    } catch (error) {
+      alert('Unable to connect to server.')
+    }
+  }
+
   return (
     <div className="auth-container">
 
@@ -16,16 +55,47 @@ function Signup() {
 
         <form onSubmit={handleSignup}>
           <label>Full Name</label>
-          <input type="text" placeholder="Enter your full name" required />
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
           <label>Email Address</label>
-          <input type="email" placeholder="Enter your email" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
           <label>Phone Number</label>
-          <input type="tel" placeholder="Enter your phone number" pattern="[0-9]{10}" maxLength="10" required/>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your phone number"
+            pattern="[0-9]{10}"
+            maxLength="10"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
 
           <label>Password</label>
-          <input type="password" placeholder="Create a password" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Create a password"
+            value={formData.password}
+            onChange={handleChange}
+            minLength="8"
+            required
+          />
 
           <button type="submit">Create Account</button>
         </form>

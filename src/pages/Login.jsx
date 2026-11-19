@@ -1,11 +1,45 @@
 import '../App.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
+import { useState } from 'react'
+
 function Login() {
   const navigate = useNavigate()
-  const handleLogin = (e) => {
-  e.preventDefault()
-  navigate('/dashboard')
-  }  
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  })
+
+  const handleLogin = async (e) => {
+    e.preventDefault()
+
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const data = await response.json()
+
+      console.log("LOGIN STATUS:", response.status);
+      console.log("LOGIN DATA:", data);
+
+      if (response.ok) {
+        localStorage.setItem('user', JSON.stringify(data.user))
+        alert('Login successful!')
+        navigate('/dashboard')
+      } else {
+        alert(data.message)
+      }
+
+    } catch (error) {
+      alert('Unable to connect to server.')
+    }
+  }
+
   return (
     <div className="auth-container">
 
@@ -19,6 +53,8 @@ function Login() {
           <input
             type="email"
             placeholder="Enter your email"
+            value={formData.email}
+            onChange={(e) => setFormData({...formData, email: e.target.value})}
             required
           />
 
@@ -26,9 +62,13 @@ function Login() {
           <input
             type="password"
             placeholder="Enter your password"
+            value={formData.password}
+            onChange={(e) => setFormData({...formData, password: e.target.value})}
             required
           />
-
+          <div style={{ textAlign: 'right', marginBottom: '15px' }}>
+           <Link to="/forgot-password">Forgot Password?</Link>
+          </div>
           <button type="submit">Login</button>
         </form>
 

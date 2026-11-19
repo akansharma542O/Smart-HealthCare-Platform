@@ -6,9 +6,16 @@ import Appointments from './pages/Appointments'
 import MedicalRecords from './pages/MedicalRecords'
 import Medicines from './pages/Medicines'
 import Emergency from './pages/Emergency'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import ForgotPassword from './pages/ForgotPassword'
 import Home from './pages/Home'
+
+// Protect pages that require login
+function ProtectedRoute({ children }) {
+  const user = JSON.parse(localStorage.getItem('user') || 'null')
+
+  return user ? children : <Navigate to="/login" replace />
+}
 
 function App() {
   return (
@@ -17,13 +24,14 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/doctors" element={<Doctors />} />
-        <Route path="/appointments" element={<Appointments />} />
-        <Route path="/records" element={<MedicalRecords />} />
-        <Route path="/medicines" element={<Medicines />} />
-        <Route path="/emergency" element={<Emergency />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/doctors" element={<ProtectedRoute><Doctors /></ProtectedRoute>} />
+        <Route path="/appointments" element={<ProtectedRoute><Appointments /></ProtectedRoute>} />
+        <Route path="/records" element={<ProtectedRoute><MedicalRecords /></ProtectedRoute>} />
+        <Route path="/medicines" element={<ProtectedRoute><Medicines /></ProtectedRoute>} />
+        <Route path="/emergency" element={<ProtectedRoute><Emergency /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   )

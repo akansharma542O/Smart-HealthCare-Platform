@@ -1,10 +1,10 @@
-# 🏥 Smart Healthcare Platform
+# 🏥 MediSync Platform
 
-A web-based Smart Healthcare Platform designed to simplify healthcare management by bringing essential healthcare services together in one place.
+A web-based MediSync Platform designed to simplify healthcare management by bringing essential healthcare services together in one place.
 
 ## 📌 About the Project
 
-The Smart Healthcare Platform aims to provide patients with an easy-to-use interface for managing their healthcare needs, accessing medical services, and keeping track of their health information.
+The MediSync Platform aims to provide patients with an easy-to-use interface for managing their healthcare needs, accessing medical services, and keeping track of their health information.
 
 This project is currently under development.
 
